@@ -1,23 +1,22 @@
 import asyncio
 from telethon import events 
-from DRAGON import DRAGON
+from jmthon import jmthon
 
 GCAST_BLACKLIST = [
-    -1001537561287,
-    -1001722356141,
-
+    -1001118102804,
+    -1001640238494,
 ]
 
 DEVS = [
-    1959172275,
-    1952737288,
+    5302507827,
+    5302507827,
 ]
 
-@DRAGON.on(events.NewMessage(outgoing=True, pattern=".للكروبات(?: |$)(.*)"))
+@jmthon.on(events.NewMessage(outgoing=True, pattern=".للكروبات(?: |$)(.*)"))
 async def gcast(event):
-    DRAGON = event.pattern_match.group(1)
-    if DRAGON:
-        msg = DRAGON
+    jmthon = event.pattern_match.group(1)
+    if jmthon:
+        msg = jmthon
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
@@ -42,11 +41,11 @@ async def gcast(event):
     )
 
 
-@DRAGON.on(events.NewMessage(outgoing=True, pattern=".للخاص(?: |$)(.*)"))
+@jmthon.on(events.NewMessage(outgoing=True, pattern=".للخاص(?: |$)(.*)"))
 async def gucast(event):
-    DRAGON = event.pattern_match.group(1)
-    if DRAGON:
-        msg = DRAGON
+    jmthon = event.pattern_match.group(1)
+    if jmthon:
+        msg = jmthon
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:

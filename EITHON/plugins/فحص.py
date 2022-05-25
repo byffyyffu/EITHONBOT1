@@ -4,7 +4,7 @@ from datetime import datetime
 import requests
 from telethon import __version__ as __tele_version__
 from telethon import events, TelegramClient
-from DRAGON import DRAGON, StartTime
+from jmthon import jmthon, StartTime
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -36,13 +36,13 @@ def get_readable_time(seconds: int) -> str:
 __python_version__ = f"{sys.version_info[0]}.{sys.version_info[1]}.{sys.version_info[2]}"
 
 
-@DRAGON.on(events.NewMessage(outgoing=True, pattern=f"^.فحص$"))
+@jmthon.on(events.NewMessage(outgoing=True, pattern=f"^.فحص$"))
 async def alive_t(event):
     start = datetime.now()
     end = datetime.now()
     (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
-    reply_msg = f"**[۩▬▬ Ξ𝗜𝗧𝗛𝗢𝗡™ USERBOT ▬▬۩](https://t.me/EITHON1)**\n━━━━━━━━━━━━━━━━━━\n"
+    reply_msg = f"**[۩▬▬ Ξ𝗜𝗧𝗛𝗢𝗡™ 𝐔𝐒𝐄𝐑𝐁𝐎𝐓 ▬▬۩](https://t.me/EITHON1)**\n━━━━━━━━━━━━━━━━━━\n"
     reply_msg += f"أصدار البايثون: `{__python_version__}`\n"
     reply_msg += f"أصدار التيليثون: `{__tele_version__}`\n"
     reply_msg += f"أصدار ايــثــون:** `0.1`**\n"
@@ -51,10 +51,10 @@ async def alive_t(event):
     reply_msg += f"\n- الوقت: {uptime}"
     await event.edit(reply_msg)
 
-@DRAGON.on(events.NewMessage(outgoing=True, pattern=f"^.بنك$"))
+@jmthon.on(events.NewMessage(outgoing=True, pattern=f"^.بنك$"))
 async def _(event):
-    app_info = await DRAGON.get_me()
+    app_info = await jmthon.get_me()
     start = datetime.now()
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    await event.edit(f"• Ξ𝗜𝗧𝗛𝗢𝗡™ USERBOT •\n\n<b>- سرعة البنك<b/>: <code>{ms} في الثانيه</code>", parse_mode="html")
+    await event.edit(f"• Ξ𝗜𝗧𝗛𝗢𝗡™ 𝐔𝐒𝐄𝐑𝐁𝐎𝐓 •\n\n<b>- سرعة البنك<b/>: <code>{ms} في الثانيه</code>", parse_mode="html")

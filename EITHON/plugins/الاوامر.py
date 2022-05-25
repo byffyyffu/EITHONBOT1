@@ -1,7 +1,7 @@
-from DRAGON import DRAGON
+from jmthon import jmthon
 from telethon import events
 
-@DRAGON.on(events.NewMessage(outgoing=True, pattern=".الاوامر"))
+@jmthon.on(events.NewMessage(outgoing=True, pattern=".الاوامر"))
 async def _(event):
       await event.edit("""اوامر سورس ايــثــون المؤقت: 
 

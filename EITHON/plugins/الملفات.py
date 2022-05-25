@@ -1,16 +1,16 @@
 import os
 import asyncio
 from pathlib import Path
-from DRAGON import DRAGON
+from jmthon import jmthon
 from telethon import events
 
-@DRAGON.on(events.NewMessage(outgoing=True, pattern="تنصيب"))
+@jmthon.on(events.NewMessage(outgoing=True, pattern="^.تنصيب (.*)"))
 async def install(event):
     if event.reply_to_msg_id:
         try:
             downloaded_file_name = await event.client.download_media(
                 await event.get_reply_message(),
-                "DRAGON/plugins/",
+                "jmthon/plugins/",
             )
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
