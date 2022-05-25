@@ -5,9 +5,9 @@ import logging
 import importlib
 from pathlib import Path
 from telethon import TelegramClient, events
-from DRAGON import DRAGON, LOGGER
+from jmthon import jmthon, LOGGER
 from telethon.tl.functions.channels import JoinChannelRequest
-from DRAGON.plugins import *
+from jmthon.plugins import *
 
 async def saves():
     try:
@@ -17,24 +17,24 @@ async def saves():
     except Exception as e:
         print(str(e))
     try:
-        await DRAGON(JoinChannelRequest("@EITHON1"))
+        await jmthon(JoinChannelRequest("@EITHON1"))
     except BaseException:
         pass
     try:
-        await DRAGON(JoinChannelRequest("@eithonsupport"))
+        await jmthon(JoinChannelRequest("@eithonsupport"))
     except BaseException:
         pass
 
 def load_plugins(plugin_name):
-    path = Path(f"DRAGON/plugins/{plugin_name}.py")
-    name = "DRAGON.plugins.{}".format(plugin_name)
+    path = Path(f"jmthon/plugins/{plugin_name}.py")
+    name = "jmthon.plugins.{}".format(plugin_name)
     spec = importlib.util.spec_from_file_location(name, path)
     load = importlib.util.module_from_spec(spec)
     load.logger = logging.getLogger(plugin_name)
     spec.loader.exec_module(load)
-    sys.modules["DRAGON.plugins." + plugin_name] = load
+    sys.modules["jmthon.plugins." + plugin_name] = load
 
-path = "DRAGON/plugins/*.py"
+path = "jmthon/plugins/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as a:
@@ -42,10 +42,10 @@ for name in files:
         plugin_name = patt.stem
         load_plugins(plugin_name.replace(".py", ""))
 
-DRAGON.start()
+jmthon.start()
 
-DRAGON.loop.create_task(saves())
+jmthon.loop.create_task(saves())
 
-print("- تم بنجاح تنصيب سورس ايــثــون  @EITHON1")
+print("- تم بنجاح تنصيب سورس ايــثــون  @jmthon")
 
-DRAGON.run_until_disconnected()
+jmthon.run_until_disconnected()
