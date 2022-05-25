@@ -1,1 +1,1 @@
-worker: python3 -m DRAGON
+worker: python3 -m jmthon
