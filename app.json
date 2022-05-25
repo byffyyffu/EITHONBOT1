@@ -1,0 +1,34 @@
+{
+  "name": "Ξ𝗜𝗧𝗛𝗢𝗡™ ",
+  "description": "سورس تلثيون ايـــثـــون التجريبي تابع القناة لمعرفه المزيد [(https://t.me/EITHON1)]",
+  "logo": "https://telegra.ph/file/2ed67fafed303714aabe4.jpg",
+  "env": {
+    "API_ID": {
+      "description": "الايبب ايدي",
+      "value": ""
+    },
+    "TZ": {
+      "description": "هنا ضع المنطقه الزمنيه الخاص بك القارة والمحافظه- اذا كنت من العراق او السعوديه لا تغيرها",
+      "value": "Asia/Baghdad"
+    },
+    "BIO": {
+      "description": "بايو حسابك - نبذه حسابك ",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "الايبي هاش",
+      "value": ""
+    },
+    "STRING_SESSION": {
+      "description": "كود تيرمكس",
+      "value": ""
+    }
+  },
+  "addons": [{
+    "plan": "heroku-postgresql",
+    "options": {
+      "version": "12"
+    }
+  }],
+  "buildpacks": [{"url": "heroku/python"}]
+}
