@@ -1,1 +1,1 @@
-worker: python3 -m jmthon
+worker: python3 -m EITHON
