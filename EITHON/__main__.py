@@ -17,11 +17,11 @@ async def saves():
     except Exception as e:
         print(str(e))
     try:
-        await jmthon(JoinChannelRequest("@EITHON1"))
+        await jmthon(JoinChannelRequest("@jmthon"))
     except BaseException:
         pass
     try:
-        await jmthon(JoinChannelRequest("@eithonsupport"))
+        await jmthon(JoinChannelRequest("@rr9r7"))
     except BaseException:
         pass
 
@@ -46,6 +46,6 @@ jmthon.start()
 
 jmthon.loop.create_task(saves())
 
-print("- تم بنجاح تنصيب سورس ايــثــون  @jmthon")
+print("- تم بنجاح تنصيب سورس جمثون  @jmthon")
 
 jmthon.run_until_disconnected()
