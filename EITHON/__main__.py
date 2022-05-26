@@ -5,7 +5,7 @@ import logging
 import importlib
 from pathlib import Path
 from telethon import TelegramClient, events
-from jmthon import jmthon, LOGGER
+from EITHON import EITHON, LOGGER
 from telethon.tl.functions.channels import JoinChannelRequest
 from EITHON.plugins import *
 
