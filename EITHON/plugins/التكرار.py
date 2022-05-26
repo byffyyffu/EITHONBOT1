@@ -5,9 +5,9 @@ from telethon.tl.functions.messages import GetStickerSetRequest
 from telethon import events
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 #from plugins.helpers import _rozutils
-from jmthon import jmthon
+from EITHON import EITHON
 
-@jmthon.on(events.NewMessage(outgoing=True, pattern="^.تكرار (.*)"))
+@EITHON.on(events.NewMessage(outgoing=True, pattern="^.تكرار (.*)"))
 async def spammer(event):
     jasem = await event.get_reply_message()
     roz = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)
@@ -23,7 +23,7 @@ async def spammer(event):
 
 
 
-@jmthon.on(events.NewMessage(outgoing=True, pattern="^.مؤقت (.*)"))
+@EITHON.on(events.NewMessage(outgoing=True, pattern="^.مؤقت (.*)"))
 async def spammer(event):
     reply = await event.get_reply_message()
     input_str = "".join(event.text.split(maxsplit=1)[1:]).split(" ", 2)

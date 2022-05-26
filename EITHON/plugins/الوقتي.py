@@ -7,7 +7,7 @@ from datetime import datetime
 from telethon import events
 from telethon.errors import FloodWaitError
 from telethon.tl import functions
-from jmthon import jmthon
+from EITHON import EITHON
 from config import BIO
 
 DEL_TIME_OUT = 60
@@ -18,7 +18,7 @@ LOGS = logging.getLogger(__name__)
 
 Raze = False
 
-@jmthon.on(events.NewMessage(outgoing=True, pattern="^.اسم وقتي$"))
+@EITHON.on(events.NewMessage(outgoing=True, pattern="^.اسم وقتي$"))
 async def _(event):
     global Raze
 
@@ -32,7 +32,7 @@ async def _(event):
         name = f"{HM}"
         LOGS.info(name)
         try:
-            await jmthon(
+            await EITHON(
                 functions.account.UpdateProfileRequest(
                     first_name=name
                 )
@@ -43,13 +43,13 @@ async def _(event):
         await asyncio.sleep(DEL_TIME_OUT)
 
 
-@jmthon.on(events.NewMessage(outgoing=True, pattern="^.انهاء اسم وقتي$"))
+@EITHON.on(events.NewMessage(outgoing=True, pattern="^.انهاء اسم وقتي$"))
 async def _(event):
         global Raze
         Raze = False
         idk = await event.edit(f"**- تم ايقاف الاسم الوقتي**")
 
-@jmthon.on(events.NewMessage(outgoing=True, pattern="^.بايو وقتي$"))
+@EITHON.on(events.NewMessage(outgoing=True, pattern="^.بايو وقتي$"))
 async def _(event):
     if event.fwd_from:
         return
@@ -62,7 +62,7 @@ async def _(event):
         bio = f"{BIO} |️ {HM}"
         LOGS.info(bio)
         try:
-            await jmthon(
+            await EITHON(
                 functions.account.UpdateProfileRequest(
                     about=bio
                 )

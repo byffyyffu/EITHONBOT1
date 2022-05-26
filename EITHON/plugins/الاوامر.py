@@ -1,7 +1,7 @@
-from jmthon import jmthon
+from EITHON import EITHON
 from telethon import events
 
-@jmthon.on(events.NewMessage(outgoing=True, pattern=".الاوامر"))
+@EITHON.on(events.NewMessage(outgoing=True, pattern=".الاوامر"))
 async def _(event):
       await event.edit("""اوامر سورس ايــثــون المؤقت: 
 

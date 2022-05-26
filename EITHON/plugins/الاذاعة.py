@@ -1,6 +1,6 @@
 import asyncio
 from telethon import events 
-from jmthon import jmthon
+from EITHON import EITHON
 
 GCAST_BLACKLIST = [
     -1001118102804,
@@ -12,11 +12,11 @@ DEVS = [
     5302507827,
 ]
 
-@jmthon.on(events.NewMessage(outgoing=True, pattern=".للكروبات(?: |$)(.*)"))
+@EITHON.on(events.NewMessage(outgoing=True, pattern=".للكروبات(?: |$)(.*)"))
 async def gcast(event):
-    jmthon = event.pattern_match.group(1)
-    if jmthon:
-        msg = jmthon
+    EITHON = event.pattern_match.group(1)
+    if EITHON:
+        msg = EITHON
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
@@ -41,11 +41,11 @@ async def gcast(event):
     )
 
 
-@jmthon.on(events.NewMessage(outgoing=True, pattern=".للخاص(?: |$)(.*)"))
+@EITHON.on(events.NewMessage(outgoing=True, pattern=".للخاص(?: |$)(.*)"))
 async def gucast(event):
-    jmthon = event.pattern_match.group(1)
-    if jmthon:
-        msg = jmthon
+    EITHON = event.pattern_match.group(1)
+    if EITHON:
+        msg = EITHON
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
