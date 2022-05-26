@@ -17,11 +17,11 @@ async def saves():
     except Exception as e:
         print(str(e))
     try:
-        await jmthon(JoinChannelRequest("@jmthon"))
+        await jmthon(JoinChannelRequest("@EITHON"))
     except BaseException:
         pass
     try:
-        await jmthon(JoinChannelRequest("@rr9r7"))
+        await jmthon(JoinChannelRequest("@EITHON"))
     except BaseException:
         pass
 
@@ -32,9 +32,9 @@ def load_plugins(plugin_name):
     load = importlib.util.module_from_spec(spec)
     load.logger = logging.getLogger(plugin_name)
     spec.loader.exec_module(load)
-    sys.modules["jmthon.plugins." + plugin_name] = load
+    sys.modules["EITHON.plugins." + plugin_name] = load
 
-path = "jmthon/plugins/*.py"
+path = "EITHON/plugins/*.py"
 files = glob.glob(path)
 for name in files:
     with open(name) as a:
@@ -46,6 +46,6 @@ jmthon.start()
 
 jmthon.loop.create_task(saves())
 
-print("- تم بنجاح تنصيب سورس جمثون  @jmthon")
+print("- تم بنجاح تنصيب سورس ايثون  @EITHON")
 
 jmthon.run_until_disconnected()
