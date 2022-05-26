@@ -17,11 +17,11 @@ async def saves():
     except Exception as e:
         print(str(e))
     try:
-        await jmthon(JoinChannelRequest("@EITHON"))
+        await EITHON(JoinChannelRequest("@EITHON1"))
     except BaseException:
         pass
     try:
-        await jmthon(JoinChannelRequest("@EITHON"))
+        await EITHON(JoinChannelRequest("@EITHON1"))
     except BaseException:
         pass
 
@@ -42,10 +42,10 @@ for name in files:
         plugin_name = patt.stem
         load_plugins(plugin_name.replace(".py", ""))
 
-jmthon.start()
+EITHON.start()
 
-jmthon.loop.create_task(saves())
+EITHON.loop.create_task(saves())
 
-print("- تم بنجاح تنصيب سورس ايثون  @EITHON")
+print(" تنصيب سورس ايــثــون  @EITHON1")
 
-jmthon.run_until_disconnected()
+EITHON.run_until_disconnected()

@@ -11,4 +11,4 @@ logging.basicConfig(
 
 LOGGER = logging.getLogger(__name__)
 StartTime = time.time()
-jmthon = TelegramClient(StringSession(STRING_SESSION), api_id=API_ID, api_hash=API_HASH)
+EITHON = TelegramClient(StringSession(STRING_SESSION), api_id=API_ID, api_hash=API_HASH)
