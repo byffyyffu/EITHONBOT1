@@ -7,7 +7,7 @@ from pathlib import Path
 from telethon import TelegramClient, events
 from jmthon import jmthon, LOGGER
 from telethon.tl.functions.channels import JoinChannelRequest
-from jmthon.plugins import *
+from EITHON.plugins import *
 
 async def saves():
     try:
