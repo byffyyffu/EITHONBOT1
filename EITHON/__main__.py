@@ -26,8 +26,8 @@ async def saves():
         pass
 
 def load_plugins(plugin_name):
-    path = Path(f"jmthon/plugins/{plugin_name}.py")
-    name = "jmthon.plugins.{}".format(plugin_name)
+    path = Path(f"EITHON/plugins/{plugin_name}.py")
+    name = "EITHON.plugins.{}".format(plugin_name)
     spec = importlib.util.spec_from_file_location(name, path)
     load = importlib.util.module_from_spec(spec)
     load.logger = logging.getLogger(plugin_name)
